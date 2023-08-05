@@ -9,27 +9,6 @@ CREATE TABLE IF NOT EXISTS "collection" (
 	"title"	TEXT UNIQUE,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
-CREATE TABLE IF NOT EXISTS "home_content" (
-	"id"	INTEGER NOT NULL UNIQUE,
-	"title"	TEXT NOT NULL,
-	"description"	TEXT,
-	"sort_mode"	TEXT,
-	"filter_wallpaper_id"	INTEGER,
-	"filter_collection_id"	INTEGER,
-	"filter_artist_id"	INTEGER,
-	"filter_inspiration_id"	INTEGER,
-	"filter_inspiration_group_id"	INTEGER,
-	"limit_max_size"	INTEGER,
-	"limit_min_size"	INTEGER,
-	"position"	INTEGER,
-	PRIMARY KEY("id" AUTOINCREMENT),
-	FOREIGN KEY("sort_mode") REFERENCES "sort_mode"("id"),
-	FOREIGN KEY("filter_wallpaper_id") REFERENCES "wallpaper"("id"),
-	FOREIGN KEY("filter_collection_id") REFERENCES "collection"("id"),
-	FOREIGN KEY("filter_artist_id") REFERENCES "artist"("id"),
-	FOREIGN KEY("filter_inspiration_id") REFERENCES "inspiration"("id"),
-	FOREIGN KEY("filter_inspiration_group_id") REFERENCES "inspiration_group"("id")
-);
 CREATE TABLE IF NOT EXISTS "inspiration" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"title"	TEXT NOT NULL,
@@ -42,6 +21,27 @@ CREATE TABLE IF NOT EXISTS "inspiration_group" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"title"	TEXT NOT NULL UNIQUE,
 	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS "showcase" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"title"	TEXT NOT NULL,
+	"description"	TEXT,
+	"sort_mode"	TEXT DEFAULT 'latest',
+	"filter_wallpaper_id"	INTEGER,
+	"filter_collection_id"	INTEGER,
+	"filter_artist_id"	INTEGER,
+	"filter_inspiration_id"	INTEGER,
+	"filter_inspiration_group_id"	INTEGER,
+	"size_max"	INTEGER,
+	"size_min"	INTEGER,
+	"position"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("sort_mode") REFERENCES "sort_mode"("id"),
+	FOREIGN KEY("filter_wallpaper_id") REFERENCES "wallpaper"("id"),
+	FOREIGN KEY("filter_collection_id") REFERENCES "collection"("id"),
+	FOREIGN KEY("filter_artist_id") REFERENCES "artist"("id"),
+	FOREIGN KEY("filter_inspiration_id") REFERENCES "inspiration"("id"),
+	FOREIGN KEY("filter_inspiration_group_id") REFERENCES "inspiration_group"("id")
 );
 CREATE TABLE IF NOT EXISTS "sort_mode" (
 	"id"	TEXT NOT NULL UNIQUE,
@@ -67,6 +67,8 @@ INSERT INTO "collection" VALUES (1,'AMOLED mnml');
 INSERT INTO "collection" VALUES (2,'mnml');
 INSERT INTO "inspiration" VALUES (1,'Sunset at sea',NULL,0,NULL);
 INSERT INTO "inspiration" VALUES (2,'Piet Mondrian',NULL,1,'https://en.wikipedia.org/wiki/Piet_Mondrian');
+INSERT INTO "showcase" VALUES (1,'Latest Wallpapers',NULL,'latest',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "showcase" VALUES (2,'Random Wallpapers',NULL,'random',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "sort_mode" VALUES ('latest');
 INSERT INTO "sort_mode" VALUES ('oldest');
 INSERT INTO "sort_mode" VALUES ('random');
