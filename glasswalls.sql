@@ -21,16 +21,14 @@ CREATE TABLE IF NOT EXISTS "home_content" (
 	"filter_inspiration_group_id"	INTEGER,
 	"limit_max_size"	INTEGER,
 	"limit_min_size"	INTEGER,
+	"position"	INTEGER,
 	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("sort_mode") REFERENCES "sort_mode"("id"),
 	FOREIGN KEY("filter_wallpaper_id") REFERENCES "wallpaper"("id"),
 	FOREIGN KEY("filter_collection_id") REFERENCES "collection"("id"),
 	FOREIGN KEY("filter_artist_id") REFERENCES "artist"("id"),
-	FOREIGN KEY("filter_inspiration_id") REFERENCES "inspiration"("id")
-);
-CREATE TABLE IF NOT EXISTS "home_content_type" (
-	"id"	TEXT NOT NULL,
-	PRIMARY KEY("id")
+	FOREIGN KEY("filter_inspiration_id") REFERENCES "inspiration"("id"),
+	FOREIGN KEY("filter_inspiration_group_id") REFERENCES "inspiration_group"("id")
 );
 CREATE TABLE IF NOT EXISTS "inspiration" (
 	"id"	INTEGER NOT NULL UNIQUE,
@@ -67,10 +65,6 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 INSERT INTO "artist" VALUES (1,'Yasan Glass');
 INSERT INTO "collection" VALUES (1,'AMOLED mnml');
 INSERT INTO "collection" VALUES (2,'mnml');
-INSERT INTO "home_content_type" VALUES ('wallpaper_list');
-INSERT INTO "home_content_type" VALUES ('collection_single');
-INSERT INTO "home_content_type" VALUES ('collection_list');
-INSERT INTO "home_content_type" VALUES ('wallpaper_single');
 INSERT INTO "inspiration" VALUES (1,'Sunset at sea',NULL,0,NULL);
 INSERT INTO "inspiration" VALUES (2,'Piet Mondrian',NULL,1,'https://en.wikipedia.org/wiki/Piet_Mondrian');
 INSERT INTO "sort_mode" VALUES ('latest');
