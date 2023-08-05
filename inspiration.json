@@ -1,17 +1,15 @@
 [
     {
         "description": null,
+        "id": 1,
         "image_count": 0,
-        "inspiration_group_id": null,
-        "is": 1,
         "links": null,
         "title": "Sunset at sea"
     },
     {
         "description": null,
+        "id": 2,
         "image_count": 1,
-        "inspiration_group_id": null,
-        "is": 2,
         "links": "https://en.wikipedia.org/wiki/Piet_Mondrian",
         "title": "Piet Mondrian"
     }

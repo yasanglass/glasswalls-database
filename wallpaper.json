@@ -1,13 +1,13 @@
 [
     {
-        "artist_id": null,
-        "collection_id": null,
-        "height": 0,
+        "artist_id": 1,
+        "collection_id": 1,
+        "height": 2500,
         "id": 1,
-        "inspiration_id": null,
-        "month": null,
-        "title": null,
-        "width": 0,
-        "year": null
+        "inspiration_id": 1,
+        "month": 10,
+        "title": "mnml 1",
+        "width": 2500,
+        "year": 2023
     }
 ]
