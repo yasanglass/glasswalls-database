@@ -2,5 +2,17 @@
     {
         "name": "wallpaper",
         "seq": 0
+    },
+    {
+        "name": "collection",
+        "seq": 2
+    },
+    {
+        "name": "artist",
+        "seq": 1
+    },
+    {
+        "name": "inspiration",
+        "seq": 1
     }
 ]
