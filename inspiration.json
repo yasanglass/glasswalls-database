@@ -1,7 +1,18 @@
 [
     {
         "description": null,
+        "image_count": 0,
+        "inspiration_group_id": null,
         "is": 1,
-        "title": "Alice Glass"
+        "links": null,
+        "title": "Sunset at sea"
+    },
+    {
+        "description": null,
+        "image_count": 1,
+        "inspiration_group_id": null,
+        "is": 2,
+        "links": "https://en.wikipedia.org/wiki/Piet_Mondrian",
+        "title": "Piet Mondrian"
     }
 ]

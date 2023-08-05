@@ -1,1 +1,13 @@
-null
+[
+    {
+        "artist_id": null,
+        "collection_id": null,
+        "height": 0,
+        "id": 1,
+        "inspiration_id": null,
+        "month": null,
+        "title": null,
+        "width": 0,
+        "year": null
+    }
+]

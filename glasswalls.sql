@@ -13,7 +13,16 @@ CREATE TABLE IF NOT EXISTS "inspiration" (
 	"is"	INTEGER NOT NULL UNIQUE,
 	"title"	TEXT NOT NULL,
 	"description"	TEXT,
-	PRIMARY KEY("is" AUTOINCREMENT)
+	"image_count"	INTEGER DEFAULT 0,
+	"links"	TEXT,
+	"inspiration_group_id"	INTEGER,
+	PRIMARY KEY("is" AUTOINCREMENT),
+	FOREIGN KEY("inspiration_group_id") REFERENCES "inspiration_group"("id")
+);
+CREATE TABLE IF NOT EXISTS "inspiration_group" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"title"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("id" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"id"	INTEGER NOT NULL UNIQUE,
@@ -33,5 +42,7 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 INSERT INTO "artist" VALUES (1,'Yasan Glass');
 INSERT INTO "collection" VALUES (1,'AMOLED mnml');
 INSERT INTO "collection" VALUES (2,'mnml');
-INSERT INTO "inspiration" VALUES (1,'Alice Glass',NULL);
+INSERT INTO "inspiration" VALUES (1,'Sunset at sea',NULL,0,NULL,NULL);
+INSERT INTO "inspiration" VALUES (2,'Piet Mondrian',NULL,1,'https://en.wikipedia.org/wiki/Piet_Mondrian',NULL);
+INSERT INTO "wallpaper" VALUES (1,NULL,0,0,NULL,NULL,NULL,NULL,NULL);
 COMMIT;
