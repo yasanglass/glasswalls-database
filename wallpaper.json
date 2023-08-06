@@ -5,8 +5,27 @@
         "height": 2500,
         "id": 1,
         "inspiration_id": 1,
-        "month": 10,
         "title": "mnml 1",
+        "width": 2500,
+        "year": 2023
+    },
+    {
+        "artist_id": 1,
+        "collection_id": null,
+        "height": 2500,
+        "id": 2,
+        "inspiration_id": null,
+        "title": "mnml 2",
+        "width": 2500,
+        "year": 2023
+    },
+    {
+        "artist_id": 1,
+        "collection_id": null,
+        "height": 2500,
+        "id": 3,
+        "inspiration_id": null,
+        "title": "mnml 3",
         "width": 2500,
         "year": 2023
     }
