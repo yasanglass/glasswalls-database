@@ -32,16 +32,20 @@ CREATE TABLE IF NOT EXISTS "showcase" (
 	"filter_artist_id"	INTEGER,
 	"filter_inspiration_id"	INTEGER,
 	"filter_inspiration_group_id"	INTEGER,
-	"size_max"	INTEGER,
-	"size_min"	INTEGER,
-	"position"	INTEGER,
+	"position"	INTEGER NOT NULL DEFAULT 0 UNIQUE,
+	"type"	TEXT NOT NULL DEFAULT 'wallpaper_list',
 	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("sort_mode") REFERENCES "sort_mode"("id"),
 	FOREIGN KEY("filter_wallpaper_id") REFERENCES "wallpaper"("id"),
 	FOREIGN KEY("filter_collection_id") REFERENCES "collection"("id"),
 	FOREIGN KEY("filter_artist_id") REFERENCES "artist"("id"),
 	FOREIGN KEY("filter_inspiration_id") REFERENCES "inspiration"("id"),
-	FOREIGN KEY("filter_inspiration_group_id") REFERENCES "inspiration_group"("id")
+	FOREIGN KEY("filter_inspiration_group_id") REFERENCES "inspiration_group"("id"),
+	FOREIGN KEY("type") REFERENCES "showcase_type"("id")
+);
+CREATE TABLE IF NOT EXISTS "showcase_type" (
+	"id"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("id")
 );
 CREATE TABLE IF NOT EXISTS "sort_mode" (
 	"id"	TEXT NOT NULL UNIQUE,
@@ -67,8 +71,10 @@ INSERT INTO "collection" VALUES (1,'AMOLED mnml');
 INSERT INTO "collection" VALUES (2,'mnml');
 INSERT INTO "inspiration" VALUES (1,'Sunset at sea',NULL,0,NULL);
 INSERT INTO "inspiration" VALUES (2,'Piet Mondrian',NULL,1,'https://en.wikipedia.org/wiki/Piet_Mondrian');
-INSERT INTO "showcase" VALUES (1,'Latest Wallpapers',NULL,'latest',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "showcase" VALUES (2,'Random Wallpapers',NULL,'random',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "showcase" VALUES (1,'Latest Wallpapers',NULL,'latest',NULL,NULL,NULL,NULL,NULL,1,'wallpaper_list');
+INSERT INTO "showcase" VALUES (2,'Random Wallpapers',NULL,'random',NULL,NULL,NULL,NULL,NULL,2,'wallpaper_list');
+INSERT INTO "showcase_type" VALUES ('wallpaper');
+INSERT INTO "showcase_type" VALUES ('wallpaper_list');
 INSERT INTO "sort_mode" VALUES ('latest');
 INSERT INTO "sort_mode" VALUES ('oldest');
 INSERT INTO "sort_mode" VALUES ('random');
