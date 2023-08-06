@@ -53,10 +53,10 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"collection_id"	INTEGER,
 	"inspiration_id"	INTEGER,
 	"artist_id"	INTEGER DEFAULT 1,
-	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("collection_id") REFERENCES "collection"("id"),
 	FOREIGN KEY("artist_id") REFERENCES "artist"("id"),
-	FOREIGN KEY("inspiration_id") REFERENCES "inspiration"("id")
+	FOREIGN KEY("inspiration_id") REFERENCES "inspiration"("id"),
+	PRIMARY KEY("id" AUTOINCREMENT)
 );
 INSERT INTO "artist" VALUES (1,'Yasan Glass');
 INSERT INTO "collection" VALUES (1,'AMOLED mnml');
