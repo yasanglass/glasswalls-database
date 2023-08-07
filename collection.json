@@ -1,10 +1,10 @@
 [
     {
         "id": 1,
-        "title": "AMOLED mnml"
+        "name": "AMOLED mnml"
     },
     {
         "id": 2,
-        "title": "mnml"
+        "name": "mnml"
     }
 ]

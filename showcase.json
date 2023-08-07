@@ -6,9 +6,9 @@
         "filter_inspiration_id": null,
         "filter_wallpaper_id": null,
         "id": 1,
+        "name": "Latest Wallpapers",
         "position": 1,
         "sort_mode": "latest",
-        "title": "Latest Wallpapers",
         "type": "wallpaper"
     },
     {
@@ -18,9 +18,9 @@
         "filter_inspiration_id": null,
         "filter_wallpaper_id": null,
         "id": 2,
+        "name": "Random Wallpapers",
         "position": 2,
         "sort_mode": "random",
-        "title": "Random Wallpapers",
         "type": "wallpaper"
     }
 ]

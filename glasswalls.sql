@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS "artist" (
 );
 CREATE TABLE IF NOT EXISTS "collection" (
 	"id"	INTEGER NOT NULL UNIQUE,
-	"title"	TEXT UNIQUE,
+	"name"	TEXT UNIQUE,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "content_type" (
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS "content_type" (
 );
 CREATE TABLE IF NOT EXISTS "inspiration" (
 	"id"	INTEGER NOT NULL UNIQUE,
-	"title"	TEXT NOT NULL,
+	"name"	TEXT NOT NULL,
 	"description"	TEXT,
 	"image_count"	INTEGER DEFAULT 0,
 	"links"	TEXT,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS "inspiration" (
 );
 CREATE TABLE IF NOT EXISTS "showcase" (
 	"id"	INTEGER NOT NULL UNIQUE,
-	"title"	TEXT NOT NULL,
+	"name"	TEXT NOT NULL,
 	"description"	TEXT,
 	"sort_mode"	TEXT DEFAULT 'latest',
 	"filter_wallpaper_id"	INTEGER,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS "sort_mode" (
 );
 CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"id"	INTEGER NOT NULL UNIQUE,
-	"title"	TEXT UNIQUE,
+	"name"	TEXT UNIQUE,
 	"width"	INTEGER NOT NULL,
 	"height"	INTEGER NOT NULL,
 	"year"	INTEGER,

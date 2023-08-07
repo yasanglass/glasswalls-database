@@ -4,13 +4,13 @@
         "id": 1,
         "image_count": 0,
         "links": null,
-        "title": "Sunset at sea"
+        "name": "Sunset at sea"
     },
     {
         "description": null,
         "id": 2,
         "image_count": 1,
         "links": "https://en.wikipedia.org/wiki/Piet_Mondrian",
-        "title": "Piet Mondrian"
+        "name": "Piet Mondrian"
     }
 ]
