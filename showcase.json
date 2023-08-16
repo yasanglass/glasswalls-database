@@ -3,11 +3,13 @@
         "description": null,
         "filter_artist_id": null,
         "filter_collection_id": null,
+        "filter_favorite": null,
         "filter_inspiration_id": null,
         "filter_wallpaper_id": null,
         "id": 1,
         "name": "Latest Wallpapers",
         "position": 1,
+        "show_if_empty": 0,
         "sort_mode": "latest",
         "type": "wallpaper"
     },
@@ -15,12 +17,28 @@
         "description": null,
         "filter_artist_id": null,
         "filter_collection_id": null,
+        "filter_favorite": null,
         "filter_inspiration_id": null,
         "filter_wallpaper_id": null,
         "id": 2,
         "name": "Random Wallpapers",
         "position": 2,
+        "show_if_empty": 0,
         "sort_mode": "random",
+        "type": "wallpaper"
+    },
+    {
+        "description": "Your favorite wallpapers are all here!",
+        "filter_artist_id": null,
+        "filter_collection_id": null,
+        "filter_favorite": 1,
+        "filter_inspiration_id": null,
+        "filter_wallpaper_id": null,
+        "id": 3,
+        "name": "Favorite Wallpapers",
+        "position": 0,
+        "show_if_empty": 0,
+        "sort_mode": "latest",
         "type": "wallpaper"
     }
 ]

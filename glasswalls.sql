@@ -30,6 +30,8 @@ CREATE TABLE IF NOT EXISTS "showcase" (
 	"filter_collection_id"	INTEGER,
 	"filter_artist_id"	INTEGER,
 	"filter_inspiration_id"	INTEGER,
+	"filter_favorite"	INTEGER,
+	"show_if_empty"	INTEGER NOT NULL DEFAULT 0,
 	"position"	INTEGER NOT NULL DEFAULT 0 UNIQUE,
 	"type"	TEXT NOT NULL DEFAULT 'wallpaper',
 	PRIMARY KEY("id" AUTOINCREMENT),
@@ -64,8 +66,9 @@ INSERT INTO "collection" VALUES (2,'mnml');
 INSERT INTO "content_type" VALUES ('wallpaper');
 INSERT INTO "inspiration" VALUES (1,'Sunset at sea',NULL,0,NULL);
 INSERT INTO "inspiration" VALUES (2,'Piet Mondrian',NULL,1,'https://en.wikipedia.org/wiki/Piet_Mondrian');
-INSERT INTO "showcase" VALUES (1,'Latest Wallpapers',NULL,'latest',NULL,NULL,NULL,NULL,1,'wallpaper');
-INSERT INTO "showcase" VALUES (2,'Random Wallpapers',NULL,'random',NULL,NULL,NULL,NULL,2,'wallpaper');
+INSERT INTO "showcase" VALUES (1,'Latest Wallpapers',NULL,'latest',NULL,NULL,NULL,NULL,NULL,0,1,'wallpaper');
+INSERT INTO "showcase" VALUES (2,'Random Wallpapers',NULL,'random',NULL,NULL,NULL,NULL,NULL,0,2,'wallpaper');
+INSERT INTO "showcase" VALUES (3,'Favorite Wallpapers','Your favorite wallpapers are all here!','latest',NULL,NULL,NULL,NULL,1,0,0,'wallpaper');
 INSERT INTO "sort_mode" VALUES ('latest');
 INSERT INTO "sort_mode" VALUES ('oldest');
 INSERT INTO "sort_mode" VALUES ('random');
