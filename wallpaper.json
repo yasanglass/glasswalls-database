@@ -1,5 +1,7 @@
 [
     {
+        "action_mode_download": "",
+        "action_mode_set": null,
         "artist_id": 1,
         "collection_id": 1,
         "height": 2500,
@@ -10,6 +12,8 @@
         "year": 2023
     },
     {
+        "action_mode_download": null,
+        "action_mode_set": null,
         "artist_id": 1,
         "collection_id": null,
         "height": 2500,
@@ -20,6 +24,8 @@
         "year": 2023
     },
     {
+        "action_mode_download": null,
+        "action_mode_set": null,
         "artist_id": 1,
         "collection_id": null,
         "height": 2500,

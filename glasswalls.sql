@@ -1,4 +1,7 @@
 BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "action_mode" (
+	"id"	TEXT
+);
 CREATE TABLE IF NOT EXISTS "artist" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,
@@ -35,11 +38,11 @@ CREATE TABLE IF NOT EXISTS "showcase" (
 	"position"	INTEGER NOT NULL DEFAULT 0 UNIQUE,
 	"type"	TEXT NOT NULL DEFAULT 'wallpaper',
 	PRIMARY KEY("id" AUTOINCREMENT),
-	FOREIGN KEY("sort_mode") REFERENCES "sort_mode"("id"),
-	FOREIGN KEY("filter_wallpaper_id") REFERENCES "wallpaper"("id"),
-	FOREIGN KEY("filter_collection_id") REFERENCES "collection"("id"),
 	FOREIGN KEY("filter_artist_id") REFERENCES "artist"("id"),
+	FOREIGN KEY("filter_collection_id") REFERENCES "collection"("id"),
 	FOREIGN KEY("filter_inspiration_id") REFERENCES "inspiration"("id"),
+	FOREIGN KEY("filter_wallpaper_id") REFERENCES "wallpaper"("id"),
+	FOREIGN KEY("sort_mode") REFERENCES "sort_mode"("id"),
 	FOREIGN KEY("type") REFERENCES "content_type"("id")
 );
 CREATE TABLE IF NOT EXISTS "sort_mode" (
@@ -55,11 +58,17 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"collection_id"	INTEGER,
 	"inspiration_id"	INTEGER,
 	"artist_id"	INTEGER DEFAULT 1,
-	FOREIGN KEY("collection_id") REFERENCES "collection"("id"),
+	"action_mode_download"	TEXT DEFAULT 'enabled',
+	"action_mode_set"	TEXT DEFAULT 'enabled',
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("action_mode_download") REFERENCES "action_mode"("id"),
+	FOREIGN KEY("action_mode_set") REFERENCES "action_mode"("id"),
 	FOREIGN KEY("artist_id") REFERENCES "artist"("id"),
-	FOREIGN KEY("inspiration_id") REFERENCES "inspiration"("id"),
-	PRIMARY KEY("id" AUTOINCREMENT)
+	FOREIGN KEY("collection_id") REFERENCES "collection"("id"),
+	FOREIGN KEY("inspiration_id") REFERENCES "inspiration"("id")
 );
+INSERT INTO "action_mode" VALUES ('enabled');
+INSERT INTO "action_mode" VALUES ('disabled');
 INSERT INTO "artist" VALUES (1,'Yasan Glass');
 INSERT INTO "collection" VALUES (1,'AMOLED mnml');
 INSERT INTO "collection" VALUES (2,'mnml');
@@ -72,7 +81,7 @@ INSERT INTO "showcase" VALUES (3,'Favorite Wallpapers','Your favorite wallpapers
 INSERT INTO "sort_mode" VALUES ('latest');
 INSERT INTO "sort_mode" VALUES ('oldest');
 INSERT INTO "sort_mode" VALUES ('random');
-INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,1,1,1);
-INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,NULL,NULL,1);
-INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,NULL,NULL,1);
+INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,1,1,1,'',NULL);
+INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,NULL,NULL,1,NULL,NULL);
+INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,NULL,NULL,1,NULL,NULL);
 COMMIT;
