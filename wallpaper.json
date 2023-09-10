@@ -1,7 +1,7 @@
 [
     {
-        "action_mode_download": "",
-        "action_mode_set": null,
+        "action_mode_download": "enabled",
+        "action_mode_set": "enabled",
         "artist_id": 1,
         "collection_id": 1,
         "height": 2500,
@@ -12,10 +12,10 @@
         "year": 2023
     },
     {
-        "action_mode_download": null,
-        "action_mode_set": null,
+        "action_mode_download": "enabled",
+        "action_mode_set": "enabled",
         "artist_id": 1,
-        "collection_id": null,
+        "collection_id": 1,
         "height": 2500,
         "id": 2,
         "inspiration_id": null,
@@ -24,14 +24,38 @@
         "year": 2023
     },
     {
-        "action_mode_download": null,
-        "action_mode_set": null,
+        "action_mode_download": "enabled",
+        "action_mode_set": "enabled",
         "artist_id": 1,
-        "collection_id": null,
+        "collection_id": 2,
         "height": 2500,
         "id": 3,
         "inspiration_id": null,
         "name": "mnml 3",
+        "width": 2500,
+        "year": 2023
+    },
+    {
+        "action_mode_download": "disabled",
+        "action_mode_set": "enabled",
+        "artist_id": 1,
+        "collection_id": 2,
+        "height": 2500,
+        "id": 4,
+        "inspiration_id": null,
+        "name": "pro 1",
+        "width": 2500,
+        "year": 2023
+    },
+    {
+        "action_mode_download": "disabled",
+        "action_mode_set": "disabled",
+        "artist_id": 1,
+        "collection_id": null,
+        "height": 2500,
+        "id": 5,
+        "inspiration_id": null,
+        "name": "no action",
         "width": 2500,
         "year": 2023
     }

@@ -1,6 +1,7 @@
 BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS "action_mode" (
-	"id"	TEXT
+	"id"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("id")
 );
 CREATE TABLE IF NOT EXISTS "artist" (
 	"id"	INTEGER NOT NULL UNIQUE,
@@ -58,8 +59,8 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"collection_id"	INTEGER,
 	"inspiration_id"	INTEGER,
 	"artist_id"	INTEGER DEFAULT 1,
-	"action_mode_download"	TEXT DEFAULT 'enabled',
-	"action_mode_set"	TEXT DEFAULT 'enabled',
+	"action_mode_download"	TEXT NOT NULL DEFAULT 'enabled',
+	"action_mode_set"	TEXT NOT NULL DEFAULT 'enabled',
 	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("action_mode_download") REFERENCES "action_mode"("id"),
 	FOREIGN KEY("action_mode_set") REFERENCES "action_mode"("id"),
@@ -81,7 +82,9 @@ INSERT INTO "showcase" VALUES (3,'Favorite Wallpapers','Your favorite wallpapers
 INSERT INTO "sort_mode" VALUES ('latest');
 INSERT INTO "sort_mode" VALUES ('oldest');
 INSERT INTO "sort_mode" VALUES ('random');
-INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,1,1,1,'',NULL);
-INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,NULL,NULL,1,NULL,NULL);
-INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,NULL,NULL,1,NULL,NULL);
+INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,1,1,1,'enabled','enabled');
+INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,1,NULL,1,'enabled','enabled');
+INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,2,NULL,1,'enabled','enabled');
+INSERT INTO "wallpaper" VALUES (4,'pro 1',2500,2500,2023,2,NULL,1,'disabled','enabled');
+INSERT INTO "wallpaper" VALUES (5,'no action',2500,2500,2023,NULL,NULL,1,'disabled','disabled');
 COMMIT;
