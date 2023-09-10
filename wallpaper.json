@@ -1,6 +1,6 @@
 [
     {
-        "action_mode_download": "enabled",
+        "action_mode_download": "premium",
         "action_mode_set": "enabled",
         "artist_id": 1,
         "collection_id": 1,
@@ -12,7 +12,7 @@
         "year": 2023
     },
     {
-        "action_mode_download": "enabled",
+        "action_mode_download": "premium",
         "action_mode_set": "enabled",
         "artist_id": 1,
         "collection_id": 1,
@@ -24,7 +24,7 @@
         "year": 2023
     },
     {
-        "action_mode_download": "enabled",
+        "action_mode_download": "premium",
         "action_mode_set": "enabled",
         "artist_id": 1,
         "collection_id": 2,
@@ -36,7 +36,7 @@
         "year": 2023
     },
     {
-        "action_mode_download": "disabled",
+        "action_mode_download": "premium",
         "action_mode_set": "enabled",
         "artist_id": 1,
         "collection_id": 2,

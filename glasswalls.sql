@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"collection_id"	INTEGER,
 	"inspiration_id"	INTEGER,
 	"artist_id"	INTEGER DEFAULT 1,
-	"action_mode_download"	TEXT NOT NULL DEFAULT 'enabled',
+	"action_mode_download"	TEXT NOT NULL DEFAULT 'paid_user_only',
 	"action_mode_set"	TEXT NOT NULL DEFAULT 'enabled',
 	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("action_mode_download") REFERENCES "action_mode"("id"),
@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 );
 INSERT INTO "action_mode" VALUES ('enabled');
 INSERT INTO "action_mode" VALUES ('disabled');
+INSERT INTO "action_mode" VALUES ('premium');
 INSERT INTO "artist" VALUES (1,'Yasan Glass');
 INSERT INTO "collection" VALUES (1,'AMOLED mnml');
 INSERT INTO "collection" VALUES (2,'mnml');
@@ -82,9 +83,9 @@ INSERT INTO "showcase" VALUES (3,'Favorite Wallpapers','Your favorite wallpapers
 INSERT INTO "sort_mode" VALUES ('latest');
 INSERT INTO "sort_mode" VALUES ('oldest');
 INSERT INTO "sort_mode" VALUES ('random');
-INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,1,1,1,'enabled','enabled');
-INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,1,NULL,1,'enabled','enabled');
-INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,2,NULL,1,'enabled','enabled');
-INSERT INTO "wallpaper" VALUES (4,'pro 1',2500,2500,2023,2,NULL,1,'disabled','enabled');
+INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,1,1,1,'premium','enabled');
+INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,1,NULL,1,'premium','enabled');
+INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,2,NULL,1,'premium','enabled');
+INSERT INTO "wallpaper" VALUES (4,'pro 1',2500,2500,2023,2,NULL,1,'premium','enabled');
 INSERT INTO "wallpaper" VALUES (5,'no action',2500,2500,2023,NULL,NULL,1,'disabled','disabled');
 COMMIT;
