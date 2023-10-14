@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"collection_id"	INTEGER,
 	"inspiration_id"	INTEGER,
 	"artist_id"	INTEGER DEFAULT 1,
-	"action_mode_download"	TEXT NOT NULL DEFAULT 'paid_user_only',
+	"action_mode_download"	TEXT NOT NULL DEFAULT 'premium',
 	"action_mode_set"	TEXT NOT NULL DEFAULT 'enabled',
 	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("action_mode_download") REFERENCES "action_mode"("id"),
