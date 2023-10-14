@@ -1,9 +1,11 @@
 [
     {
+        "artist_id": 1,
         "id": 1,
         "name": "AMOLED mnml"
     },
     {
+        "artist_id": 1,
         "id": 2,
         "name": "mnml"
     }

@@ -11,7 +11,9 @@ CREATE TABLE IF NOT EXISTS "artist" (
 CREATE TABLE IF NOT EXISTS "collection" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT UNIQUE,
-	PRIMARY KEY("id" AUTOINCREMENT)
+	"artist_id"	INTEGER DEFAULT 1,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("artist_id") REFERENCES "artist"("id")
 );
 CREATE TABLE IF NOT EXISTS "content_type" (
 	"id"	TEXT NOT NULL UNIQUE,
@@ -72,8 +74,8 @@ INSERT INTO "action_mode" VALUES ('enabled');
 INSERT INTO "action_mode" VALUES ('disabled');
 INSERT INTO "action_mode" VALUES ('premium');
 INSERT INTO "artist" VALUES (1,'Yasan Glass');
-INSERT INTO "collection" VALUES (1,'AMOLED mnml');
-INSERT INTO "collection" VALUES (2,'mnml');
+INSERT INTO "collection" VALUES (1,'AMOLED mnml',1);
+INSERT INTO "collection" VALUES (2,'mnml',1);
 INSERT INTO "content_type" VALUES ('wallpaper');
 INSERT INTO "inspiration" VALUES (1,'Sunset at sea',NULL,0,NULL);
 INSERT INTO "inspiration" VALUES (2,'Piet Mondrian',NULL,1,'https://en.wikipedia.org/wiki/Piet_Mondrian');
