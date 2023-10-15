@@ -8,6 +8,7 @@
         "id": 1,
         "inspiration_id": 1,
         "name": "mnml 1",
+        "variant_count": 0,
         "width": 2500,
         "year": 2023
     },
@@ -20,6 +21,7 @@
         "id": 2,
         "inspiration_id": null,
         "name": "mnml 2",
+        "variant_count": 0,
         "width": 2500,
         "year": 2023
     },
@@ -32,6 +34,7 @@
         "id": 3,
         "inspiration_id": null,
         "name": "mnml 3",
+        "variant_count": 0,
         "width": 2500,
         "year": 2023
     },
@@ -44,6 +47,7 @@
         "id": 4,
         "inspiration_id": null,
         "name": "pro 1",
+        "variant_count": 0,
         "width": 2500,
         "year": 2023
     },
@@ -56,7 +60,21 @@
         "id": 5,
         "inspiration_id": null,
         "name": "no action",
+        "variant_count": 0,
         "width": 2500,
         "year": 2023
+    },
+    {
+        "action_mode_download": "premium",
+        "action_mode_set": "enabled",
+        "artist_id": 1,
+        "collection_id": null,
+        "height": 2560,
+        "id": 6,
+        "inspiration_id": null,
+        "name": "With variants",
+        "variant_count": 7,
+        "width": 3200,
+        "year": 2010
     }
 ]

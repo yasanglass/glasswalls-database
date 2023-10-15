@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS "wallpaper" (
 	"width"	INTEGER NOT NULL,
 	"height"	INTEGER NOT NULL,
 	"year"	INTEGER,
+	"variant_count"	INTEGER DEFAULT 0,
 	"collection_id"	INTEGER,
 	"inspiration_id"	INTEGER,
 	"artist_id"	INTEGER DEFAULT 1,
@@ -85,9 +86,10 @@ INSERT INTO "showcase" VALUES (3,'Favorite Wallpapers','Your favorite wallpapers
 INSERT INTO "sort_mode" VALUES ('latest');
 INSERT INTO "sort_mode" VALUES ('oldest');
 INSERT INTO "sort_mode" VALUES ('random');
-INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,1,1,1,'premium','enabled');
-INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,1,NULL,1,'premium','enabled');
-INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,2,NULL,1,'premium','enabled');
-INSERT INTO "wallpaper" VALUES (4,'pro 1',2500,2500,2023,2,NULL,1,'premium','enabled');
-INSERT INTO "wallpaper" VALUES (5,'no action',2500,2500,2023,NULL,NULL,1,'disabled','disabled');
+INSERT INTO "wallpaper" VALUES (1,'mnml 1',2500,2500,2023,0,1,1,1,'premium','enabled');
+INSERT INTO "wallpaper" VALUES (2,'mnml 2',2500,2500,2023,0,1,NULL,1,'premium','enabled');
+INSERT INTO "wallpaper" VALUES (3,'mnml 3',2500,2500,2023,0,2,NULL,1,'premium','enabled');
+INSERT INTO "wallpaper" VALUES (4,'pro 1',2500,2500,2023,0,2,NULL,1,'premium','enabled');
+INSERT INTO "wallpaper" VALUES (5,'no action',2500,2500,2023,0,NULL,NULL,1,'disabled','disabled');
+INSERT INTO "wallpaper" VALUES (6,'With variants',3200,2560,2010,7,NULL,NULL,1,'premium','enabled');
 COMMIT;
